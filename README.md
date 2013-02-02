@@ -12,6 +12,8 @@ This is the simplest possible app to demonstrate the Sidekiq Heroku Autoscaler g
     # new tab/terminal
     foreman start --formation="web=1,worker=1"
 
+Bring up the site at [http://localhost:5000](http://localhost:5000) and click the button.
+
 The application implements both the simple and complex configurations from the autoscaler examples.  To run the complex config, edit `AUTOSCALER_CONFIG` in `.env` and run
 
     foreman start --formation="web=1,default=1,import=1"
@@ -25,7 +27,9 @@ Edit `.env` to add your Heroku app name and api key. The application will detect
 ## Running on Heroku
 
     heroku apps:create your-heroku-app --addons redistogo:nano --stack cedar --remote your-heroku-app
+    heroku addons:remove heroku-postgresql:dev --app your-heroku-app
     heroku config:set HERKOU_APP=your-heroku-app HEROKU_API_KEY=xxxxx --app your-heroku-app
     heroku config:set AUTOSCALER_CONFIG=simple --app your-heroku-app
+    git push your-heroku-app master
     heroku logs --app your-heroku-app -t
 
