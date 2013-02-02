@@ -1,0 +1,6 @@
+<%= form_for :job, :url => jobs_path do |f| %>
+  <%= f.submit 'default', :name => 'queue' %>
+  <% if ENV['AUTOSCALER_CONFIG'] == 'complex' %>
+    <%= f.submit 'import', :name => 'queue' %>
+  <% end %>
+<% end %>

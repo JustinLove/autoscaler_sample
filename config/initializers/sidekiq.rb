@@ -1,0 +1,1 @@
+require ENV['AUTOSCALER_CONFIG']
