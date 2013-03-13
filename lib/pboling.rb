@@ -53,7 +53,7 @@ Sidekiq.configure_server do |config|
     uri.query = "#{params.to_query}"
     ENV['DATABASE_URL'] = uri.to_s
     puts "Sidekiq Server is reconnecting with new pool size: #{params['pool']} - DATABASE_URL => #{uri}"
-    ActiveRecord::Base.establish_connection
+    # No DB in sample ActiveRecord::Base.establish_connection
   else
     # This will be the case in local environments (development & test)
     # Even trying to limit the concurrency results in too many connections.
