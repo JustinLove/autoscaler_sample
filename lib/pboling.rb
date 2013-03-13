@@ -68,7 +68,7 @@ Sidekiq.configure_server do |config|
   config.server_middleware do |chain|
     if heroku && ENV['HEROKU_PROCESS'] && heroku[ENV['HEROKU_PROCESS']]
       p("Setting up auto-scaleer server middleware")
-      chain.add(Autoscaler::Sidekiq::Server, heroku[ENV['HEROKU_PROCESS']], 230, [ENV['HEROKU_PROCESS']])
+      chain.add(Autoscaler::Sidekiq::Server, heroku[ENV['HEROKU_PROCESS']], 30, [ENV['HEROKU_PROCESS']])
     else
       p("Not scaleable server middleware")
     end
