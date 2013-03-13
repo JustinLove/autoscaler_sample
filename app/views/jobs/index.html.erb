@@ -3,4 +3,8 @@
   <% if ENV['AUTOSCALER_CONFIG'] == 'complex' %>
     <%= f.submit 'import', :name => 'queue' %>
   <% end %>
+  <% if ENV['AUTOSCALER_CONFIG'] == 'pboling' %>
+    <%= f.submit 'critical', :name => 'queue' %>
+    <%= f.submit 'low', :name => 'queue' %>
+  <% end %>
 <% end %>
