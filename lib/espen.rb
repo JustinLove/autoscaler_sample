@@ -13,6 +13,6 @@ end
 Sidekiq.configure_server do |config|
   config.redis = { :size => 4 }
   config.server_middleware do |chain|
-    chain.add(Autoscaler::Sidekiq::Server, heroku, 60)
+    chain.add(Autoscaler::Sidekiq::Server, heroku, 30)
   end
 end
