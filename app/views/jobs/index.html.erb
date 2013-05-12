@@ -4,3 +4,9 @@
     <%= f.submit 'import', :name => 'queue' %>
   <% end %>
 <% end %>
+
+<ul>
+<% logs.each do |line| %>
+  <li><code><%= line %></code></li>
+<% end %>
+</ul>
