@@ -4,8 +4,8 @@ gem 'rails', '~> 3.2.11'
 gem 'jquery-rails'
 
 gem 'sidekiq'
-gem 'autoscaler'
+gem 'autoscaler', :require => false
 
 group :development do
-  gem 'foreman'
+  gem 'foreman', :require => false
 end
