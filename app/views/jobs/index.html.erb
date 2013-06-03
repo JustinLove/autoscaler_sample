@@ -1,3 +1,5 @@
+<h1>AUTOSCALER_CONFIG = <%= ENV['AUTOSCALER_CONFIG'] %></h1>
+
 <%= form_for :job, :url => jobs_path do |f| %>
   <%= f.submit 'default', :name => 'queue' %>
   <% if ENV['AUTOSCALER_CONFIG'] == 'complex' %>
