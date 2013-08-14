@@ -28,7 +28,7 @@ Edit `.env` to add your Heroku app name and api key. The application will detect
 
     heroku apps:create your-heroku-app --addons redistogo:nano --stack cedar --remote your-heroku-app
     heroku addons:remove heroku-postgresql:dev --app your-heroku-app
-    heroku config:set HERKOU_APP=your-heroku-app HEROKU_API_KEY=xxxxx --app your-heroku-app
+    heroku config:set HEROKU_APP=your-heroku-app HEROKU_API_KEY=xxxxx --app your-heroku-app
     heroku config:set AUTOSCALER_CONFIG=simple --app your-heroku-app
     git push your-heroku-app master
     heroku logs --app your-heroku-app -t
