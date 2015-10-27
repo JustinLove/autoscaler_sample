@@ -5,7 +5,9 @@ class HerokuLogs
       token = ENV['HEROKU_ACCESS_TOKEN'],
       app = ENV['HEROKU_APP'])
     if token && app
-      @url = PlatformAPI.connect_oauth(token).log_session.create(app, {})['logplex_url']
+      @url = PlatformAPI.connect_oauth(token)
+        .log_session
+        .create(app, {:lines => 50})['logplex_url']
     end
   end
 
