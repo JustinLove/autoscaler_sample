@@ -1,9 +1,11 @@
+require 'platform-api'
+
 class HerokuLogs
   def initialize(
-      key = ENV['HEROKU_API_KEY'],
+      token = ENV['HEROKU_ACCESS_TOKEN'],
       app = ENV['HEROKU_APP'])
-    if key && app
-      @url = Heroku::API.new(:api_key => key).get_logs(app).body
+    if token && app
+      @url = PlatformAPI.connect_oauth(token).log_session.create(app, {})['logplex_url']
     end
   end
 
